@@ -1,0 +1,107 @@
+.team {
+    @include adaptiv-value(padding-top, 94, 40, 1);
+    @include adaptiv-value(padding-bottom, 128, 40, 1);
+    &__header{
+        text-align: center;
+        @include adaptiv-value("margin-bottom", 78, 20, 1);
+    }
+    &__title{
+        &:not(:last-child) {margin: 0px 0px 10px 0px;}
+    }
+    &__text{
+        max-width: 557px;
+        margin: 0 auto;
+    }
+    &__slider-text {
+        max-width: 650px;
+        margin: 0 auto;
+    }
+    &__slider-image {
+        max-width: 500px;
+        margin: 0px auto;
+        @include adaptiv-value("margin-bottom", 78, 20, 1);
+    }
+    &__icons {
+        margin: 29px auto 0;
+        a {
+            &::before{
+                color: #90a4ae;
+            }
+            @media (any-hover: hover){
+                &:hover{
+                    &::before{
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.slider-text-team {
+    text-align: center;
+}
+.text-team-slide {
+    &__title {
+        font-size: 18px;
+        line-height: 25 / 18 * 100%;
+        font-weight: 700;
+        color: #061e37;
+        &:not(:last-child) {margin: 0px 0px 10px 0px;};
+    }
+    &__text {
+        max-width: 650px;
+    }
+}
+.slider-image-team {
+    &__slide {
+        cursor: pointer;
+        img{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            @media (max-width: $md4 + px) {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background: #ebe8e1;
+            opacity: 0.9;
+            @media (max-width: $md4 + px) {
+                height: 60px;
+                width: 60px;
+            }
+        }
+    }
+}
+.slider-image-team__wrapper {
+    justify-content: space-between;
+    align-items: center;
+    .swiper-slide-active {
+        cursor: auto;
+        margin-right: 60px;
+        @media (max-width: $md4 + px) {
+            margin-right: 40px;
+            margin-left: -10px;
+        }
+        &::before {
+            background: none;
+        }
+        img {
+            width: 160px;
+            height: 160px;
+            @media (max-width: $md4 + px) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+}

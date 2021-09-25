@@ -1,0 +1,92 @@
+@font-face {
+	font-family: "icons";
+	font-display: swap;
+	src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2#icons") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="_icon-"],
+[class*=" _icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+._icon-arrow:before {
+  content: "\e900";
+}
+._icon-arrow-fill::after{
+  content: "\e901";
+  font-family: "icons";
+}
+._icon-behance:before {
+  content: "\e902";
+}
+._icon-builder:before {
+  content: "\e903";
+}
+._icon-building:before {
+  content: "\e904";
+}
+._icon-calendar:before {
+  content: "\e905";
+}
+._icon-download:before {
+  content: "\e906";
+}
+._icon-dribble:before {
+  content: "\e907";
+}
+._icon-facebook:before {
+  content: "\e908";
+}
+._icon-facebook-simple:before {
+  content: "\e909";
+}
+._icon-footballer:before {
+  content: "\e90a";
+}
+._icon-group:before {
+  content: "\e90b";
+}
+._icon-linkedin:before {
+  content: "\e90c";
+}
+._icon-mail:before {
+  content: "\e90d";
+}
+._icon-person:before {
+  content: "\e90e";
+}
+._icon-rss:before {
+  content: "\e90f";
+}
+._icon-settings:before {
+  content: "\e910";
+}
+._icon-target:before {
+  content: "\e911";
+}
+._icon-twitter:before {
+  content: "\e912";
+}
+._icon-play::before {
+  content: "\e913";
+  font-family: "home";
+}
+._icon-trending-up:before {
+  content: "\e914";
+  font-family: "services";
+}

@@ -1,0 +1,333 @@
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.logo {
+	display: inline-flex;
+	align-items: center;
+	line-height: 15px / 15px * 100%;
+	text-transform: uppercase;
+	color: #ffffff;
+	&:before{
+		margin: 0px 10px 0px 0px;
+		font-size: 30px;
+	}
+		span{
+			font-weight: 800;
+			display: block;
+		}
+}
+.menu {
+	padding: 0 10px;
+		&__icon {
+		}
+		&__body {
+			
+		}
+		&__list {
+			@media (min-width:$md3+px){
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+			}
+		}
+
+		&__item {
+			@media (min-width:$md3+px){
+				&:not(:last-child) {
+					@include adaptiv-value(margin-right,49, 0, 3)
+				}
+			}
+		}
+
+		&__link {
+			&._active{
+				color: #061e37;
+			}
+			@media (any-hover: hover){
+				&:hover{
+					color: #061e37;
+				}
+			}
+			font-weight: 600;
+			color: #ffffff;
+			transition:	all 0.3s ease 0s;
+		}
+}
+.title {
+	font-size: 45px;
+	line-height: 120%;
+	font-weight: 600;
+	color: #061e37;
+}
+.subtitle {
+	font-size: 25px;
+	line-height: 120%;
+	font-weight: 600;
+	color: #b0bec5;
+}
+.text {
+	line-height: 25px / 15px * 100%;
+	color: #b0bec5;
+}
+.icons-messangers {
+	width: 200px;
+    display: flex;
+    justify-content: space-between;
+	align-items: flex-start;
+	&__item{
+		&::before{
+			font-size: 20px;
+			transition: all 0.3s ease 0s;
+		}
+	}
+}
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+//<ГОТОВЫЕ КЛАССЫ>====================================================================================================
+.row:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+.rub:after {
+	content: "₽";
+}
+//====================================================================================================
+%noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+//====================================================================================================
+ol.counter {
+	list-style-type: none;
+	counter-reset: item;
+	li {
+		position: relative;
+		padding: 0px 0px 0px 45px;
+		&:before {
+			counter-increment: item;
+			content: counter(item);
+			position: absolute;
+			left: 0;
+			top: 0;
+			color: #818181;
+			font-size: 14px;
+			font-weight: 700;
+			text-align: center;
+			line-height: 26px;
+			border-radius: 50%;
+			width: 28px;
+			height: 28px;
+			border: 1px solid #4274bb;
+		}
+	}
+}
+//====================================================================================================
+.ellipsis {
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.es {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+//====================================================================================================
+.table {
+	display: table;
+	font-size: 0;
+	width: 100%;
+	//table-layout: fixed;
+}
+.trow {
+	display: table-row;
+}
+.cell {
+	display: table-cell;
+	&.full {
+		width: 100%;
+	}
+}
+//====================================================================================================
+._ibg {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+body.ie {
+	._ibg {
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	._ibg img {
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+//====================================================================================================
+._video {
+	position: relative;
+	overflow: hidden;
+	video,
+	iframe,
+	object,
+	embed {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+.videobg {
+	video,
+	iframe,
+	object,
+	embed {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -100;
+		transform: translateX(-50%) translateY(-50%);
+		background-size: cover;
+	}
+}
+//====================================================================================================
+// ._more-block
+._more-block {
+}
+// ._more-content
+._more-content {
+	transition: all 0.3s ease 0s;
+	overflow: hidden;
+}
+// ._more-item
+._more-item {
+}
+// ._more-link
+._more-link {
+	cursor: pointer;
+	span {
+		font-style: normal;
+		&:first-child {
+			display: block;
+		}
+		&:last-child {
+			display: none;
+		}
+	}
+	&._active {
+		span {
+			font-style: normal;
+			&:first-child {
+				display: none;
+			}
+			&:last-child {
+				display: block;
+			}
+		}
+	}
+}
+//====================================================================================================
+%graystyle {
+	transition: all 0.3s ease 0s;
+	filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+	-moz-filter: grayscale(1);
+	-o-filter: grayscale(1);
+}
+%graystyleoff {
+	filter: grayscale(0);
+	-webkit-filter: grayscale(0);
+	-moz-filter: grayscale(0);
+	-o-filter: grayscale(0);
+}
+//====================================================================================================
+#map {
+	background: url("../img/icons/loading.gif") center / 50px no-repeat;
+}
+//====================================================================================================
+.swiper-container {
+	overflow: hidden;
+}
+//====================================================================================================
+._tabs {
+}
+._tabs-item {
+}
+._tabs-block {
+	display: none;
+	&._active {
+		display: block;
+	}
+}
+//=====================================================================================================================
+.mirror {
+	transform: scale(-1, 1);
+}
+//=====================================================================================================================
+.nicescroll-rails {
+	z-index: 1000 !important;
+}
+//========================================================================================================================================================
+
+//========================================================================================================================================================
+._custom-scroll {
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 3px;
+	height: 100%;
+	z-index: 1000;
+	//background-color: rgba(0, 0, 0, 0.1);
+	&__line {
+		background-color: rgba(0, 0, 0, 0.5);
+		border-radius: 3px 0 0 3px;
+		position: relative;
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
+}
+//</ГОТОВЫЕ КЛАССЫ>====================================================================================================
+	/*::-webkit-scrollbar { // 1 - скроллбар 
+		width: 4px;
+		height: 4px;
+		background-color: #FFFFFF;
+	}
+
+  	::-webkit-scrollbar-button {  //2 - кнопка 
+	}	
+
+  	::-webkit-scrollbar-track { // 3 - трек 
+	}
+
+  	::-webkit-scrollbar-track-piece { // 4 - видимая часть трека 
+	}
+
+	::-webkit-scrollbar-thumb { // 5 - ползунок 
+		border-radius: 2px;
+		background-color: #d1d1d1;
+	}
+
+	::-webkit-scrollbar-corner { // 6 - уголок 
+	}
+
+	::-webkit-resizer { //7 - изменение размеров 
+	}*/

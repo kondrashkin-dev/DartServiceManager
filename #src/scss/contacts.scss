@@ -1,0 +1,90 @@
+.contacts {
+    @include adaptiv-value("padding-top", 49, 20, 1);
+    @include adaptiv-value("padding-bottom", 100, 20, 1);   
+    background: #fafafa;
+	&__form {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+    &__header {
+        &:not(:last-child) {margin: 0px 0px 30px 0px;}
+        text-align: center;
+	}
+	&__title {
+        &:not(:last-child) {margin: 0px 0px 19px 0px;}
+    }
+	&__text {
+        max-width: 559px;
+        margin: 0 auto;
+	}
+}
+.form-contact-format {
+	font-family: "Raleway";
+	font-size: 14px;
+	font-weight: 500;
+	color: #061e37;
+	border: 1px solid #061e37;
+	border-radius: 5px;
+}
+.form-contact {
+	&__top {
+		display: grid;
+		max-width: 600px;
+		margin: 0 auto 20px;
+		grid-template-columns: minmax(100px,280px) minmax(100px, 280px);
+		grid-template-rows: 50px 50px 150px;
+		justify-content: space-between;
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+		input {
+			@extend .form-contact-format;
+			padding-left: 20px;
+		}
+	}
+	&__message {
+		@extend .form-contact-format;
+		padding: 20px;
+		grid-column-start: 1;
+		grid-column-end: 3;
+		resize: none;	
+	}
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+        button{
+            font-weight: 500;
+        }
+	}
+	&__subscribe {
+		label {
+			@extend .form-contact-format;
+			border: none;
+			font-size: 15px;
+		}
+		input {
+			position: absolute;
+			z-index: -1;
+			opacity: 0;
+		}
+		input+label {
+			display: inline-flex;
+			align-items: center;
+			user-select: none;
+			cursor: pointer;
+		}
+		input+label::before{
+			content: '';
+			min-width: 14px;
+			min-height: 14px;
+			margin-right: 9px;
+			border: 2px solid #061e37;
+			border-radius: 25%;
+		}
+		input:checked+label::before{
+			background-color: #061e37;
+			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+			background-repeat: no-repeat;
+		}
+	}
+}
