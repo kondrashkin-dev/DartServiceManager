@@ -1,1 +1,1 @@
-(https://github.com/kondrashkin-dev/DartServiceManager/new/master?readme=1)
+[github](https://github.com/kondrashkin-dev/DartServiceManager/new/master?readme=1)
