@@ -1,7 +1,8 @@
 //====================================================================================================//
 .home {
-    @include adaptiv-value("padding-top", 247, 100, 3);
-    height: 100vh;
+    @include adaptiv-value("padding-top", 147, 100, 3);
+    padding-bottom: 20px;
+    min-height: 100vh;
     position: relative;
     z-index: 1;
     background: url('../img/home/home-bg.jpg') 0 0/cover no-repeat;
